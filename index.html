@@ -12,9 +12,26 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <script src="smtp.js"></script>
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
+<script type="text/javascript">
+   var val=0;
+   function findTotalConuter(){
+       var settings = {
+          "url": "https://api.countapi.xyz/hit/nemadroshan.github.io/visits",
+          "method": "GET",
+          "timeout": 0,
+      };
 
-<body>
+      $.ajax(settings).done(function (response) {
+          console.log(response);
+          //alert(response.value);
+          val = response.value;
+          document.getElementById("counter").innerHTML ='Total visits : '+val;
+      });
+  }   
+</script>
+<body onload="findTotalConuter()">
 <header class="text-gray-700 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
@@ -25,7 +42,10 @@
             <a class="mr-5 hover:text-gray-900" href="#about">About</a>
             <a class="mr-5 hover:text-gray-900" href="#skillSet">Skills</a>
             <a class="mr-5 hover:text-gray-900" href="#projects">Projects</a>
-            <a class="mr-5 hover:text-gray-900" href="#contact">Contact</a>
+            <a class="mr-5 hover:text-gray-900" href="#contact"> value</a>
+           <!--  <a class="mr-5 hover:text-gray-900" href="#" id ="counter"> </a> -->
+           <h6 class="mr-5 hover:text-gray-900" id ="counter">Total visits : 100</h6>
+            
         </nav>
     </div>
 </header>
