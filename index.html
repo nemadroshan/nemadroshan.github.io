@@ -25,7 +25,6 @@
 
       $.ajax(settings).done(function (response) {
           console.log(response);
-          //alert(response.value);
           val = response.value;
           document.getElementById("counter").innerHTML ='Total visits : '+val;
       });
