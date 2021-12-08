@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head>s
     <title>Roshan Nemad</title>
     <meta charset="UTF-8">
   	<meta name="description" content="Portfullio Websiter">
@@ -26,12 +26,14 @@
       $.ajax(settings).done(function (response) {
           console.log(response);
           val = response.value;
+          console.log(val);
           document.getElementById("counter").innerHTML ='Total visits : '+val;
+
       });
-      findTotalConuter();
+      //findTotalConuter();
   }   
 </script>
-<body>
+<body onload="this.findTotalConuter();">
 <header class="text-gray-700 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
